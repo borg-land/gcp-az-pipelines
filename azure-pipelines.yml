@@ -14,7 +14,7 @@ variables:
 
 steps:
 - checkout: self
-  name: Checkout Repo
+  displayName: 'Checkout Repo'
 
 - task: DownloadSecureFile@1
   name: downloadServiceAccountKey
