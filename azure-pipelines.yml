@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-- group: Terraform
+  TF_VAR_project_id: $(TF_VAR_project_id)
 
 steps:
 - checkout: self
@@ -39,7 +39,5 @@ steps:
 
 - script: |
     export PATH="$HOME/.tfenv/bin:$PATH"
-    echo $(TF_VAR_project_id)
-    env
     bash bin/plan.sh
   displayName: 'Terraform Plan'
