@@ -33,9 +33,11 @@ steps:
   displayName: 'Tfenv install'
 
 - script: |
+    export PATH="$HOME/.tfenv/bin:$PATH"
     bash bin/lint.sh
   displayName: 'Terraform Lint'
 
 - script: |
+    export PATH="$HOME/.tfenv/bin:$PATH"
     bash bin/plan.sh
   displayName: 'Terraform Plan'

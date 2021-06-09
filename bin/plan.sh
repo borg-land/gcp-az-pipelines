@@ -2,8 +2,6 @@
 
 LAYERS=$(cat .layers.json | jq .layers[] -r)
 
-terraform version
-
 for LAYER in $LAYERS; do
   echo "terraform init $LAYER"
   (cd "$LAYER" && terraform init -input=false -no-color)
