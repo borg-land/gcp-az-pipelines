@@ -28,11 +28,11 @@ steps:
   displayName: 'Setting GOOGLE_APPLICATION_CREDENTIALS env variable'
 
 - script: |
+    export PATH="$HOME/.tfenv/bin:$PATH"
     bash bin/tfenv.sh
   displayName: 'Tfenv install'
 
 - script: |
-    export PATH="$HOME/.tfenv/bin:$PATH"
     bash bin/lint.sh
   displayName: 'Terraform Lint'
 
