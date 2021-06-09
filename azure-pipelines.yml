@@ -13,6 +13,9 @@ variables:
 - group: terraform
 
 steps:
+- checkout: self
+  name: Checkout Repo
+
 - task: DownloadSecureFile@1
   name: downloadServiceAccountKey
   displayName: 'Download Service Account Key'
