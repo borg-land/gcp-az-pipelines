@@ -10,5 +10,5 @@ for LAYER in $LAYERS; do
   (cd "$LAYER" && terraform apply --auto-approve -input=false -no-color)
 
   # for debugging, show these files exist
-  ls -la "/tmp/terraform.$LAYER.plan"
+#   ls -la "/tmp/terraform.$LAYER.plan"
 done
