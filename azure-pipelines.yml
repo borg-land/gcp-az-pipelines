@@ -39,5 +39,7 @@ steps:
 
 - script: |
     export PATH="$HOME/.tfenv/bin:$PATH"
+    echo $(TF_VAR_project_id)
+    env
     bash bin/plan.sh
   displayName: 'Terraform Plan'
