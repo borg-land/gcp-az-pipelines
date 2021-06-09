@@ -2,6 +2,8 @@
 
 LAYERS=$(cat .layers.json | jq .layers[] -r)
 
+terraform version
+
 for LAYER in $LAYERS; do
   echo "terraform init $LAYER"
   (cd "$LAYER" && terraform init -input=false -no-color)
@@ -10,5 +12,5 @@ for LAYER in $LAYERS; do
   (cd "$LAYER" && terraform plan -input=false -no-color -out="/tmp/terraform.$LAYER.plan")
 
   # for debugging, show these files exist
-  ls -la "/tmp/terraform.$LAYER.plan"
+#   ls -la "/tmp/terraform.$LAYER.plan"
 done
